@@ -4,8 +4,8 @@
 *@c: Character to be printed
 *Return: 1 if successful
 */
-int _putchar(char c);
-int print_integer(va_list arg_toptint);
+int _putchar(char c)
 {
-return (write(1, &c, 1));
+return write(1, &c, 1);
 }
+int print_integer(va_list arg_toptint);
