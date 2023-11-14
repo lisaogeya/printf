@@ -23,6 +23,7 @@ number = -number;
 lastDigit = -lastDigit;
 input++;
 }
+if (temp > 0)
 {
 /*Check the magnitude off the number*/
 while (temp / 10 != 0)
@@ -69,6 +70,7 @@ number = -number;
 lastDigit = -lastDigit;
 input++;
 }
+if (temp > 0)
 {
 /*Check the magnitude off the number*/
 while (temp / 10 != 0)
