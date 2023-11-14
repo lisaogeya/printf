@@ -9,9 +9,9 @@
  */
 int _printf(const char *format, ...)
 {
-int count = 0;
-va_list args;
-va_start(args, format);
+int total = 0;
+va_list the_arg_list;
+va_start(the_arg_list, format);
 while (*format)
 {
 if (*format == '%' && (*(format + 1) == 'c' || *(format + 1) == 's' || *(format + 1) == '%' || *(format + 1) == 'd' || *(format + 1) == 'i'))
@@ -20,10 +20,10 @@ format += 2; /*move to the next character*/
 }
 else
 {
-count += _putchar(*format);
+total += _putchar(*format);
 format++;
 }
 }
-va_end(args);
-return (count);
+va_end(the_arg_list);
+return (total);
 }
