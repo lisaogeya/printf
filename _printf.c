@@ -1,45 +1,32 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
- * _printf - Custom printf function for %d and %i format specifiers.
- * @format: Format string with optional placeholders.
- * Return: Number of characters printed.
+ * _printf - Prints output according to a format
+ * @format: Character string containing zero or more directives
+ *
+ * Return: The number of characters printed
  */
 int _printf(const char *format, ...)
 {
-    convert p[] = {
-        {"%i", print_integer}, {"%d", print_integer}, {"%r", print_revs},
-    };
-
+    int count = 0;
     va_list args;
-    int k = 0, length = 0;
 
     va_start(args, format);
 
-    while (format[k] != '\0')
+    while (*format)
     {
-        if (format[k] == '%' && (format[k + 1] == 'd' || format[k + 1] == 'i'))
+        if (*format == '%' && (*(format + 1) == 'c' || *(format + 1) == 's' || *(format + 1) == '%' || *(format + 1) == 'd' || *(format + 1) == 'i'))
         {
-            int j = 0;
-            while (j < sizeof(p) / sizeof(p[0]))
-            {
-                if (strcmp(format + k, p[j].ph) == 0)
-                {
-                    length += p[j].function(args);
-                    break;
-                }
-                j++;
-            }
-            k += 2; /* Move past the format specifier */
+            format += 2; /*move to the next character*/
         }
         else
         {
-            _putchar(format[k]);
-            length++;
-            k++;
+            count += _putchar(*format);
+            format++;
         }
     }
 
     va_end(args);
-    return (length);
+    return (count);
 }

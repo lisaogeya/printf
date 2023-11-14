@@ -18,11 +18,12 @@ number = number / 10;
 if (lastDigit < 0)
 {
 _putchar('-');
-temp = -temp;
+temp = -number;
 number = -number;
 lastDigit = -lastDigit;
 input++;
 }
+temp = number;
 if (temp > 0)
 {
 /*Check the magnitude off the number*/
@@ -65,11 +66,12 @@ number = number / 10;
 if (lastDigit < 0)
 {
 _putchar('-');
-temp = -temp;
+temp = -number;
 number = -number;
 lastDigit = -lastDigit;
 input++;
 }
+temp = number;
 if (temp > 0)
 {
 /*Check the magnitude off the number*/
