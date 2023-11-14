@@ -25,7 +25,7 @@ input++;
 }
 {
 /*Check the magnitude off the number*/
-while (temp!= 0)
+while (temp / 10 != 0)
 {
 exp = exp * 10;
 temp = temp / 10;
@@ -71,7 +71,7 @@ input++;
 }
 {
 /*Check the magnitude off the number*/
-while (temp != 0)
+while (temp / 10 != 0)
 {
 exp = exp * 10;
 temp = temp / 10;
