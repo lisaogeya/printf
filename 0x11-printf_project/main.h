@@ -9,5 +9,4 @@ int _printf(const char *format, ...);
 int print_integer(va_list arg_toprint);
 int print_decimal(va_list arg_toprint);
 int _putchar(char c);
-int main(void);
 #endif 

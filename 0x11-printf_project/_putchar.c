@@ -8,4 +8,3 @@ int _putchar(char c)
 {
 return write(1, &c, 1);
 }
-int print_integer(va_list arg_toptint);
