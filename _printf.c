@@ -1,11 +1,9 @@
 #include "main.h"
-
 /**
- * _printf - Prints output according to a format
- * @format: Character string containing zero or more directives
- *
- * Return: The number of characters printed
- */
+* _printf - Prints output according to a format
+* @format: Character string containing zero or more directives
+* Return: The number of characters printed
+*/
 int _printf(const char *format, ...)
 {
 char *string;
@@ -56,4 +54,3 @@ format++;
 va_end(the_arg_list);
 return (total);
 }
-
