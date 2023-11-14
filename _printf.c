@@ -22,12 +22,12 @@ while (*format != '\0')
 {
 if (*format != '%')
 {
-write (STDOUT_FILENO, format, 1);
+write(STDOUT_FILENO, format, 1);
 total++;
 }
 else
 {
-switch (*++format)
+switch (*format++)
 {
 case 'c':
 *c = va_arg(the_arg_list, int);
@@ -44,7 +44,6 @@ length++;
 write(STDOUT_FILENO, string, length);
 total += length;
 break;
-
 default:
 putchar('%');
 write(STDOUT_FILENO, format, 1);
