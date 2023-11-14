@@ -14,7 +14,6 @@ int temp, lastDigit = number % 10, currentDigit, exp = 1;
 int input = 1;
 /*putting the original number for more processing*/
 number = number / 10;
-temp = number;
 /*To handle where the last digit is negative*/
 if (lastDigit < 0)
 {
@@ -24,10 +23,9 @@ number = -number;
 lastDigit = -lastDigit;
 input++;
 }
-if (temp > 0)
 {
 /*Check the magnitude off the number*/
-while (temp / 10 != 0)
+while (temp!= 0)
 {
 exp = exp * 10;
 temp = temp / 10;
@@ -62,7 +60,6 @@ int temp, lastDigit = number % 10, currentDigit, exp = 1;
 int input = 1;
 /*putting the original number for more processings*/
 number = number / 10;
-temp = number;
 /*To handle where the last digit is negative*/
 if (lastDigit < 0)
 {
@@ -72,10 +69,9 @@ number = -number;
 lastDigit = -lastDigit;
 input++;
 }
-if (temp > 0)
 {
 /*Check the magnitude off the number*/
-while (temp / 10 != 0)
+while (temp != 0)
 {
 exp = exp * 10;
 temp = temp / 10;
