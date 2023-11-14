@@ -1,11 +1,9 @@
 #include "main.h"
-
 /**
- * _printf - Prints output according to a format
- * @format: Character string containing zero or more directives
- *
- * Return: The number of characters printed
- */
+* _printf - Prints output according to a format
+* @format: Character string containing zero or more directives
+* Return: The number of characters printed
+*/
 int _printf(const char *format, ...)
 {
 char *string;
@@ -22,7 +20,7 @@ while (*format != '\0')
 {
 if (*format != '%')
 {
-write (STDOUT_FILENO, format, 1);
+write(STDOUT_FILENO, format, 1);
 total++;
 }
 else
@@ -44,7 +42,6 @@ length++;
 write(STDOUT_FILENO, string, length);
 total += length;
 break;
-
 default:
 putchar('%');
 write(STDOUT_FILENO, format, 1);
@@ -57,4 +54,3 @@ format++;
 va_end(the_arg_list);
 return (total);
 }
-
