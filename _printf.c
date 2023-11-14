@@ -7,6 +7,8 @@
  */
 int _printf(const char * const format, ...)
 {
+convert p[] = {
+{"%i", print_i}, {"%d", print_d}, {"%r", print_revs},
 va_list args;
 int k = 0, length = 0;
 va_start(args, format);
