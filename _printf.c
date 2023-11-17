@@ -6,7 +6,7 @@
 */
 int _printf(const char *format, ...)
 {
-char *string;
+char *str;
 int total = 0;
 char *c;
 int length;
@@ -33,13 +33,8 @@ write(1, &c, 1);
 total++;
 break;
 case 's':
-string = va_arg(the_arg_list, char *);
-length = 0;
-for (; *string != '\0'; ++string)
-{
-length++;
-}
-write(STDOUT_FILENO, string, length);
+str = print_str(va_arg(the_arg_list, char *));
+write(STDOUT_FILENO, str, length);
 total += length;
 break;
 default:
