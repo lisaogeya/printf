@@ -6,7 +6,6 @@
 */
 int _printf(const char *format, ...)
 {
-int d;
 char *string;
 int total = 0;
 char *c;
@@ -30,12 +29,9 @@ switch (*format++)
 {
 case 'c':
 *c = va_arg(the_arg_list, int);
-write(STDOUT_FILENO, &c, 1);
+write(1, &c, 1);
 total++;
 break;
-case 'd':
-d = va_arg(the_arg_list, int);
-write(STDOUT_FILENO, &d, 1);
 case 's':
 string = va_arg(the_arg_list, char *);
 length = 0;
