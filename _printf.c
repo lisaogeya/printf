@@ -8,8 +8,6 @@ int _printf(const char *format, ...)
 {
 char *str;
 int total = 0;
-char *c;
-int length;
 va_list the_arg_list;
 va_start(the_arg_list, format);
 if (format == NULL)
@@ -28,8 +26,8 @@ else
 switch (*format++)
 {
 case 'c':
-*c = va_arg(the_arg_list, int);
-write(1, &c, 1);
+char c = va_arg(the_arg_list, int);
+write(STDOUT_FILENO, &c, 1);
 total++;
 break;
 case 's':
